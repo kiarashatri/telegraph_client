@@ -4,7 +4,7 @@ This Project is a Light-weight But Powerfull Messenger WebApp that work with it'
 You Can find it's Open Source Back-end On Following Repository : [Telegraph-Server](https://github.com/kiarashatri/telegeraph-server).  
 **caution : back-end of this project isn't completed yet , its will be complete and publish very soon .**
 
-## Running Live Deployment Server Roadmap :
+## Running Live Server Roadmap :
 
 - Make sure you have installed Node.js
 
@@ -24,7 +24,10 @@ You Can find it's Open Source Back-end On Following Repository : [Telegraph-Serv
   ```bash
   cp .env.example .env
   ```
-  **you can read more about .env requirements in document**
+  **you can read more about Environment Variables requirements in document**
+  - To run this project, at least this environment variables are require:  
+  `SERVER_URL`
+
 
 - Run Live Server :
 
@@ -59,8 +62,8 @@ After following this step's , Your localhost live server Url shown in your Termi
   cp .env.example .env
   ```
   **you can read more about Environment Variables requirements in document**
-  - To run this project, at least this environment variables are require.
-    `SERVER_URL`
+  - To run this project, at least this environment variables are require:  
+  `SERVER_URL`
 
 
 - Build Project :
@@ -108,20 +111,20 @@ As soon as Project complete, Demo will be upload on server.
 
   - /
 
-    - /login
-      To login to an existing user
+    - /login  
+        To login to an existing user
 
-    - /register
-      To register a new User
+    - /register  
+        To register a new User
      
-    - /email-confirmation
-      To register a new User
+    - /email-confirmation  
+        To register a new User
 
-    - /{:user}
-      to access main user page
+    - /{:user}  
+        to access main user page
 
-      - /{:to}
-        Messenge to an other user
+      - /{:to}  
+          Messenge to an other user
 
 
 

@@ -1,12 +1,49 @@
+// // Importing Dependencies
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import reportWebVitals from './reportWebVitals';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+// import provider to use redux state's in hole app
+import { Provider } from 'react-redux';
 
-const root = ReactDOM.createRoot(document.querySelector('body') as HTMLElement);
-root.render(
+
+// Importing Route Component's
+import Dashboard from './Routes/Dashboard';
+import Login from './Routes/Login';
+import Register from './Routes/Register';
+import ConformEmail from './Routes/ConformEmail';
+
+// import Store -> Created by Redux/ToolKit State manager
+import {store} from './Redux/configureStore';
+
+// Importing base style file's 
+import './Assets/Styles/Tailwind.scss';
+
+
+
+
+
+
+// Create App directly inside Body tag 
+ReactDOM.createRoot(document.querySelector('body') as HTMLElement).render(
   <React.StrictMode>
+    <Provider store={store}>
 
-  </React.StrictMode>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Dashboard/>} />
+          <Route path="login" element={<Login/>} />
+          <Route path="register" element={<Register/>} />
+          <Route path="confirm-email" element={<ConformEmail/>} />
+        </Routes>
+      </BrowserRouter>
+
+    </Provider>
+  </React.StrictMode >
 );
 
-reportWebVitals();
+// Route's :
+
+//   - './' => Access to the main dashboard of the messenger
+//   - './login' => Login to existing user
+//   - './register' => Register new user
+//   - './confirm-email' => Confirm the email of new registered user
