@@ -21,7 +21,7 @@ export const messengesSlice = createSlice({
   initialState,
   reducers: {
     isLogin: state => {
-      state.islogin;
+      // state.islogin;
     },
     incrementByAmount: (state, action: PayloadAction<number>) => {
       state.id = action.payload

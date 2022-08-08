@@ -13,7 +13,7 @@ import Register from './Routes/Register';
 import ConformEmail from './Routes/ConformEmail';
 
 // import Store -> Created by Redux/ToolKit State manager
-import {store} from './Redux/configureStore';
+import {store} from './Redux/ConfigureStore';
 
 // Importing base style file's 
 import './Assets/Styles/Tailwind.scss';
@@ -24,8 +24,7 @@ import './Assets/Styles/Tailwind.scss';
 
 
 // Create App directly inside Body tag 
-ReactDOM.createRoot(document.querySelector('body') as HTMLElement).render(
-  <React.StrictMode>
+ReactDOM.createRoot(document.querySelector('.root') as HTMLElement).render(
     <Provider store={store}>
 
       <BrowserRouter>
@@ -38,7 +37,6 @@ ReactDOM.createRoot(document.querySelector('body') as HTMLElement).render(
       </BrowserRouter>
 
     </Provider>
-  </React.StrictMode >
 );
 
 // Route's :

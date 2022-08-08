@@ -1,0 +1,6 @@
+./login: { username, password }
+  authenticated : require => ok | user_not_found | incorrect_password | email_confirmation_require
+  access_token : notRequire => String
+
+  ./verify_token: { ACCESS_TOKEN }
+  verify : require => true | false 

@@ -21,10 +21,10 @@ export const tweetsSlice = createSlice({
   initialState,
   reducers: {
     isLogin: state => {
-      state.islogin;
+      // state.islogin;
     },
     incrementByAmount: (state, action: PayloadAction<number>) => {
-      state.id = action.payload
+      // state.id = action.payload
     }
   }
 })
