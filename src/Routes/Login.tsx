@@ -2,6 +2,7 @@ import { Alert } from "@mui/material";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import PostLogin from "../Services/PostLogin";
+import VerifyToken from "../Services/VerifyToken";
 
 export default function Login(): JSX.Element {
   const [status, setStatus] = useState<number | undefined>(0);
@@ -29,6 +30,7 @@ export default function Login(): JSX.Element {
 
   return (
     <>
+      <VerifyToken />
       <h1 className="text-3xl font-bold underline">login!</h1>
       <button onClick={handleReq}>login</button>
 

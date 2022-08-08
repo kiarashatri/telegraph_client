@@ -47,17 +47,31 @@ async function postVerifyToServer(token?: string | undefined) {
   return { verify };
 }
 
-export default function VerifyToken() {
+interface verifyTokenPropsInterface {
+  navigateTo: string;
+}
+VerifyToken.defaultProps = {
+  navigateTo: "/",
+};
+
+export default function VerifyToken({
+  navigateTo,
+}: verifyTokenPropsInterface): JSX.Element {
   let navigate2Home = useNavigate();
   const [jsxVerify, setJsxVerify] = useState<Boolean | null>();
 
   useEffect(() => {
     postVerifyToServer().then(({ verify }) => {
       if (verify) {
-        navigate2Home("/");
+        if (navigateTo !== "") {
+          navigate2Home(navigateTo);
+        }
       } else {
-        setJsxVerify(!verify);
+        if (navigateTo === "") {
+          navigate2Home("/login");
+        }
       }
+      setJsxVerify(verify);
     });
   }, []);
 
