@@ -73,7 +73,7 @@ export default function VerifyToken({
       }
       setJsxVerify(verify);
     });
-  }, []);
+  });
 
   return (
     <>

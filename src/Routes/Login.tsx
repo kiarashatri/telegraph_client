@@ -1,5 +1,5 @@
 import { Alert } from "@mui/material";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import PostLogin from "../Services/PostLogin";
 import VerifyToken from "../Services/VerifyToken";
