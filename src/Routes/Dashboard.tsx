@@ -11,7 +11,7 @@ const socket: Socket = io("ws://localhost:5000", {
 
 export default function Dashboard(): JSX.Element {
   useEffect(() => {
-    socket.once("allUnreadMsgFromServer", (args) => {
+    socket.once("tst", (args) => {
       console.log(socket.id);
       console.log(args);
     });
