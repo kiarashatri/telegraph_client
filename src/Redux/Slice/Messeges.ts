@@ -1,34 +1,32 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit'
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 // Define a type for the slice state
-interface messengesStateInterface {
-  id: Number | null,
-  islogin: Boolean,
-  accessToken: String | null,
-}
+export type MessengesStateInterface = {
+  id: number | null;
+  islogin: boolean;
+  accessToken: string | null;
+};
 
 // Define the initial state using that type
-const initialState: messengesStateInterface = {
+const initialState: MessengesStateInterface = {
   id: null,
   islogin: false,
   accessToken: null,
-  
-
-}
+};
 
 export const messengesSlice = createSlice({
-  name: 'messenges',
+  name: "messenge",
   initialState,
   reducers: {
-    isLogin: state => {
+    isLogin: (state) => {
       // state.islogin;
     },
     incrementByAmount: (state, action: PayloadAction<number>) => {
-      state.id = action.payload
-    }
-  }
-})
+      state.id = action.payload;
+    },
+  },
+});
 
-export const { isLogin ,incrementByAmount } = messengesSlice.actions
+export const { isLogin, incrementByAmount } = messengesSlice.actions;
 
-export default messengesSlice.reducer
+export default messengesSlice.reducer;

@@ -1,34 +1,70 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit'
+import { Theme } from "@mui/material";
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 // Define a type for the slice state
-interface userStateInterface {
-  id: Number | null,
-  islogin: Boolean,
-  accessToken: String | null,
-}
+type UserStateInterface = {
+  id?: string;
+  theme?: any;
+  connection: boolean;
+  accessToken?: string;
+  biography?: string;
+  family?: string;
+  name?: string;
+  username?: string;
+  photo?: string;
+};
 
 // Define the initial state using that type
-const initialState: userStateInterface = {
-  id: null,
-  islogin: false,
-  accessToken: null,
-  
-
-}
+const initialState: UserStateInterface = {
+  connection: false,
+};
 
 export const userSlice = createSlice({
-  name: 'user',
+  name: "user",
   initialState,
   reducers: {
-    isLogin: state => {
-      // state.islogin;
+    resetUser: () => initialState,
+    setConnection: (state, action: PayloadAction<boolean>) => {
+      state.connection = action.payload;
     },
-    incrementByAmount: (state, action: PayloadAction<number>) => {
-      state.id = action.payload
-    }
-  }
-})
+    setAccessToken: (state, action: PayloadAction<string>) => {
+      state.accessToken = action.payload;
+    },
+    setTheme: (state, action: PayloadAction<any>) => {
+      state.theme = action.payload;
+    },
+    setId: (state, action: PayloadAction<string>) => {
+      state.id = action.payload;
+    },
+    setName: (state, action: PayloadAction<string>) => {
+      state.name = action.payload;
+    },
+    setFamily: (state, action: PayloadAction<string>) => {
+      state.family = action.payload;
+    },
+    setBiography: (state, action: PayloadAction<string>) => {
+      state.biography = action.payload;
+    },
+    setUsername: (state, action: PayloadAction<string>) => {
+      state.username = action.payload;
+    },
+    setPhoto: (state, action: PayloadAction<string>) => {
+      state.photo = action.payload;
+    },
+  },
+});
 
-export const { isLogin ,incrementByAmount } = userSlice.actions
+export const {
+  resetUser,
+  setTheme,
+  setConnection,
+  setAccessToken,
+  setId,
+  setName,
+  setFamily,
+  setBiography,
+  setUsername,
+  setPhoto,
+} = userSlice.actions;
 
-export default userSlice.reducer
+export default userSlice.reducer;
